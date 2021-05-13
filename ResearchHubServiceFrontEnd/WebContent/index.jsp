@@ -7,8 +7,6 @@ if (request.getParameter("action") != null)
 { 
 	 Researchproject researchProjectObj = new Researchproject();
 	 
-	 //itemObj.connect();//For testing the connect method
-	 
 	 //call insert function
 	 if ( request.getParameter("action").equalsIgnoreCase("insert"))
 	 {
@@ -98,6 +96,7 @@ if (request.getParameter("action") != null)
 	 			<label for="categoryid"> Category ID :</label></span>
 				 </div>
 				<select name="categoryid" id="categoryid">
+					<option value="PC21000000">--- Select A Category ---</option>
 				    <option value="PC21000001">PC21000001</option>
 				    <option value="PC21000002">PC21000002</option>
 				    <option value="PC21000003">PC21000003</option>
