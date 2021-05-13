@@ -1,5 +1,55 @@
+<%@ page import = "com.gadgetbadget.researchhub.model.Researchproject" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
+<%
+if (request.getParameter("action") != null)
+{ 
+	 Researchproject researchProjectObj = new Researchproject();
+	 
+	 //itemObj.connect();//For testing the connect method
+	 
+	 //call insert function
+	 if ( request.getParameter("action").equalsIgnoreCase("insert"))
+	 {
+		 String stsMsg = researchProjectObj.insertProject(request.getParameter("researcher_id"),
+				 request.getParameter("project_name"), 
+				 request.getParameter("project_description"), 
+				 request.getParameter("category_id"), 
+				 request.getParameter("project_start_date"), 
+				 request.getParameter("project_end_date"), 
+				 request.getParameter("expected_total_budget")).toString();
+ 		 session.setAttribute("statusMsg", stsMsg);
+ 	 }
+	 
+	 //call update function
+	 else if (request.getParameter("action").equalsIgnoreCase("update"))
+	 {
+		System.out.println("newUpdate");
+	    String stsMsg = researchProjectObj.updateProject(request.getParameter("project_id"),
+	    		request.getParameter("researcher_id"),
+				 request.getParameter("project_name"), 
+				 request.getParameter("project_description"), 
+				 request.getParameter("category_id"), 
+				 request.getParameter("project_start_date"), 
+				 request.getParameter("project_end_date"), 
+				 request.getParameter("expected_total_budget")).toString();
+	 	session.setAttribute("statusMsg", stsMsg);
+	 }
+	 
+	 //call delete function
+	 else if(request.getParameter("action").equalsIgnoreCase("delete"))
+	 {
+		System.out.println("newDelete");
+	 	String stsMsg = researchProjectObj.deleteProject(request.getParameter("researcher_id"), request.getParameter("project_id")).toString();
+	    session.setAttribute("statusMsg", stsMsg);
+	 }
+ 
+
+}	
+ %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +72,7 @@
 	<div class="input-group-prepend">
 				<span class="input-group-text" id="lblName">Researcher ID : </span>
 				 </div>
-				 <input type="text" id="researcherID" name="researcherID">
+				 <input type="text" id="researcher_id" name="researcher_id">
 				 </div>
 			 
 	<!--PROJECT NAME-->
@@ -30,7 +80,7 @@
 	<div class="input-group-prepend">
 				<span class="input-group-text" id="lblName">Project Name : </span>
 				 </div>
-				 <input type="text" id="projectName" name="projectName">
+				 <input type="text" id="project_name" name="project_name">
 				 </div>
 				 
 	<!--PROJECT DESCRIPTION-->
@@ -38,7 +88,7 @@
 	<div class="input-group-prepend">
 				<span class="input-group-text" id="lblName">Project Description : </span>
 				 </div>
-				 <input type="text" id="projectDescription" name="projectDescription">
+				 <input type="text" id="project_description" name="project_description">
 				 </div>
 		 
 	<!-- CATEGORY ID -->
@@ -66,7 +116,7 @@
 	<div class="input-group-prepend">
 				<span class="input-group-text" id="lblName">Project Start date : </span>
 				 </div>
-				 <input type="text" id="projectStartDate" name="projectStartDate">
+				 <input type="text" id="project_start_date" name="project_start_date">
 				 </div>
 				 
 	<!--PROJECT END DATE-->
@@ -74,7 +124,7 @@
 	<div class="input-group-prepend">
 				<span class="input-group-text" id="lblName">Project End date : </span>
 				 </div>
-				 <input type="text" id="projectEndDate" name="projectEndDate">
+				 <input type="text" id="project_end_date" name="project_end_date">
 				 </div>
 				 
 	<!--EXPECTED TOTAL BUDGET-->
@@ -82,7 +132,7 @@
 	<div class="input-group-prepend">
 				<span class="input-group-text" id="lblName">Expected Total Budget : </span>
 				 </div>
-				 <input type="text" id="expectedTotalBudget" name="expectedTotalBudget">
+				 <input type="text" id="expected_total_budget" name="expected_total_budget">
 				 </div>
  <div id="alertSuccess" class="alert alert-success"></div>
  <div id="alertError" class="alert alert-danger"></div>
