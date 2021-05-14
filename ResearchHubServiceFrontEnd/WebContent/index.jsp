@@ -43,9 +43,7 @@
 							placeholder="Project start date" class="form-control col-12 mb-2">
 						<input type="text" id="project_end_date" name="project_end_date"
 							placeholder="Project End Date" class="form-control col-12 mb-2">
-						<input type="text" id="expected_budget" name="expected_budget"
-							placeholder="Expected Budget" class="form-control col-12 mb-2">
-						<input type="hidden" id="hiddenProductId" name="hiddenProductId" value="">
+						<input type="hidden" id="hiddenProjectId" name="hiddenProjectId" value="">
 						<button type="button" id="btnSubmit"
 							class="form-control btn btn-primary mb-2" value="" class="col-12">Add
 							Project</button>
