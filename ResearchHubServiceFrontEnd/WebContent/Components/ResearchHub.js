@@ -155,16 +155,14 @@ function validateForm() {
     	return "Category ID cannot be empty."
     }
     
-
 	if($("#project_start_date").val().trim() == "") {
     	return "Project start date cannot be empty."
     }
-
+	
 	if($("#project_end_date").val().trim() == "") {
-    	return "Project end date cannot be empty."
+    	return "Project start date cannot be empty."
     }
-
-    
+	
     var expected_total_budget = $("#expected_total_budget").val().trim();
     if(expected_total_budget == "") {
     	return "Expected Total Budget cannot be empty."

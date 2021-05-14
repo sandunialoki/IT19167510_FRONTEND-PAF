@@ -44,8 +44,7 @@
 						<input type="text" id="expected_total_budget" name="expected_total_budget"
 							placeholder="Expected Total Budget" class="form-control col-12 mb-2">
 						<input type="hidden" id="hiddenProjectId" name="hiddenProjectId" value="">
-						<button type="button" id="btnSubmit"
-							class="form-control btn btn-primary mb-2" value="" class="col-12">Add
+						<button type="button" id="btnSubmit" class="form-control btn btn-primary mb-2" value="" class="col-12">Add
 							Project</button>
 					</div>
 				</form>

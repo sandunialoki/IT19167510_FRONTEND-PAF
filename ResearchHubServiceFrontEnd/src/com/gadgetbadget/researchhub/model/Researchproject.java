@@ -103,6 +103,7 @@ public class Researchproject extends DBHandler{
 				recordObject.addProperty("researcher_id", rs.getString("researcher_id"));
 				recordObject.addProperty("project_name", rs.getString("project_name"));
 				recordObject.addProperty("project_description", rs.getString("project_description"));
+				recordObject.addProperty("category_id", rs.getString("category_id"));
 				recordObject.addProperty("project_start_date", rs.getString("project_start_date"));
 				recordObject.addProperty("project_end_date", rs.getString("project_end_date"));
 				recordObject.addProperty("expected_total_budget", rs.getString("expected_total_budget"));

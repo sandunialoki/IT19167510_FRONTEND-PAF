@@ -98,7 +98,7 @@ public class ProjectAPI extends HttpServlet {
 			String project_start_date = map.get("project_start_date").toString();
 			String project_end_date = map.get("project_end_date").toString();
 			String expected_total_budget = map.get("expected_total_budget").toString();
-			System.out.println(res_id+" "+project_name+" "+project_desc+" "+cat_id+" "+project_start_date+" "+project_end_date+ " " +expected_total_budget);
+			System.out.println(proj_id+" "+res_id+" "+project_name+" "+project_desc+" "+cat_id+" "+project_start_date+" "+project_end_date+ " " +expected_total_budget);
 
 			JsonObject updateRes = projectObj.updateProject(proj_id, res_id, project_name, project_desc, cat_id, project_start_date, project_end_date, expected_total_budget);
 			System.out.println("res= " + updateRes.toString());
@@ -168,7 +168,8 @@ public class ProjectAPI extends HttpServlet {
 				+ "<thead><tr>"
 				+ "<th>project ID</th>"
 				+ "<th>Researcher ID</th>"
-				+ "<th>Product Description</th>"
+				+ "<th>Project Name</th>"
+				+ "<th>Project Description</th>"
 				+ "<th>Category ID</th>"
 				+ "<th>project start date</th>"
 				+ "<th>project end date</th>"
