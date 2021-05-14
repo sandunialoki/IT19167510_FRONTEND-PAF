@@ -28,13 +28,16 @@
 						<input type="text" id="projectDesc" name="projectDesc"
 							placeholder="Research Project Description" class="form-control col-12 mb-2">
 						<select class="form-control col-12 mb-2" id="catId" name="catId">
-							<option value="PC21000001">Network Devices</option>
-							<option value="PC21000002">Books and Magazines</option>
-							<option value="PC21000003">Clothes and Wearable </option>
-							<option value="PC21000004">Research Publications</option>
-							<option value="PC21000005">Software Products</option>
-							<option value="PC21000006">Healthcare Devices and Tools</option>
-							<option value="PC21000007">Vehicles</option>
+							<option value="RC21000001">AI</option>
+							<option value="RC21000002">Information and Intelligent Systems</option>
+							<option value="RC21000003">Energy & Fuels </option>
+							<option value="RC21000004">Robotics & Engineering</option>
+							<option value="RC21000005">Telecommunications</option>
+							<option value="RC21000006">Theoretical Physics</option>
+							<option value="RC21000007">Mathematics</option>
+							<option value="RC21000008">Computer Vision</option>
+							<option value="RC21000009">NLP</option>
+							<option value="RC21000010">Cyber security</option>
 						</select>
 						<input type="text" id="project_start_date" name="project_start_date"
 							placeholder="Project start date" class="form-control col-12 mb-2">
@@ -45,7 +48,7 @@
 						<input type="hidden" id="hiddenProductId" name="hiddenProductId" value="">
 						<button type="button" id="btnSubmit"
 							class="form-control btn btn-primary mb-2" value="" class="col-12">Add
-							Product</button>
+							Project</button>
 					</div>
 				</form>
 			</div>
@@ -58,7 +61,7 @@
 			</div>
 			<div class="row pb-3">
 				<h3 class="col-12">Projects Table</h3>
-				<div class="" id="productsGrid">
+				<div class="" id="projectsGrid">
 					<!-- auto generated table on AJAX request -->
 				</div>
 			</div>
