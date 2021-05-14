@@ -161,4 +161,78 @@ public class ProjectAPI extends HttpServlet {
 		response.getWriter().append(res.toString());
 	}
 
+	private JsonObject getTable(JsonObject productList) {
+		//generating research projects table
+		JsonObject res;		
+		String tableString = "<table class='table table-sm table-striped'>"
+				+ "<thead><tr>"
+				+ "<th>project ID</th>"
+				+ "<th>Researcher ID</th>"
+				+ "<th>Product Description</th>"
+				+ "<th>Category ID</th>"
+				+ "<th>project start date</th>"
+				+ "<th>project end date</th>"
+				+ "<th>expected total budget</th>"
+				+ "<th>Date Added</th>"
+				+ "<th>Update</th>"
+				+ "<th>Delete</th>"
+				+ "</tr><thead><tbody>";
+
+		if(! projectList.has("projects")) {
+			res = new JsonObject();
+			res.addProperty("status", "error");
+			res.addProperty("data", "error...");
+			return res;
+		}
+
+		for(JsonElement elem : projectList.get("projects").getAsJsonArray()) {
+			JsonObject project = elem.getAsJsonObject();
+			tableString += "<tr><td>"+ project.get("project_id").getAsString() +"</td>"
+					+ "<td>"+ project.get("researcher_id").getAsString() +"</td>"
+					+ "<td>"+ project.get("project_name").getAsString() +"</td>"
+					+ "<td>"+ project.get("project_description").getAsString() +"</td>"
+					+ "<td>"+ project.get("category_id").getAsString() +"</td>"
+					+ "<td>"+ project.get("project_start_date").getAsString() +"</td>"
+					+ "<td>"+ project.get("project_end_date").getAsString() +"</td>"
+					+ "<td>"+ project.get("expected_total_budget").getAsString() +"</td>"
+					+ "<td>"+ project.get("date_added").getAsString() +"</td>"
+					+ "<td><input type='button' class='btn btn-primary btnUpdate' id='btnUpdate' data-projectid='"+project.get("project_id").getAsString()+"' value='Update'></td>"
+					+ "<td><input type='button' class='btn btn-primary btnDelete' id='btnDelete' data-projectid='"+project.get("project_id").getAsString()+"' value='Delete'</td></tr>";
+		}
+
+		tableString += "</tbody></table>";
+
+		res = new JsonObject();
+		res.addProperty("status", "success");
+		res.addProperty("data", tableString);
+
+		return res;
+	}
+
+	// Convert request parameters to a Map
+		private static Map<String,String> getMap(HttpServletRequest request)
+		{
+			Map<String, String> map = new HashMap<String, String>();
+			try
+			{
+				Scanner scanner = new Scanner(request.getInputStream(), "UTF-8");
+				String queryString = scanner.hasNext() ?
+						scanner.useDelimiter("\\A").next() : "";
+				scanner.close();
+				String[] params = queryString.split("&");
+				for (String param : params)
+				{
+					String[] p = param.split("=");
+
+					//decoding the string before putting into the map to avoid undesired strings
+					map.put(p[0], java.net.URLDecoder.decode(p[1], StandardCharsets.UTF_8.name()));
+				}
+			}
+			catch (Exception ex)
+			{
+				ex.printStackTrace();
+			}
+			return map;
+		}
+
 }
