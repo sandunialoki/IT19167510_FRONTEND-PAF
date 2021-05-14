@@ -30,8 +30,8 @@
 						<select class="form-control col-12 mb-2" id="catId" name="catId">
 							<option value="RC21000001">AI</option>
 							<option value="RC21000002">Information and Intelligent Systems</option>
-							<option value="RC21000003">Energy & Fuels </option>
-							<option value="RC21000004">Robotics & Engineering</option>
+							<option value="RC21000003">Energy and Fuels </option>
+							<option value="RC21000004">Robotics and Engineering</option>
 							<option value="RC21000005">Telecommunications</option>
 							<option value="RC21000006">Theoretical Physics</option>
 							<option value="RC21000007">Mathematics</option>
