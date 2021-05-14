@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,8 +52,7 @@
 			</div>
 			<div class="row pb-3">
 				<br>
-				<div id='alertSuccess'
-					class='alert alert-success alertSuccess'></div>
+				<div id='alertSuccess'class='alert alert-success alertSuccess'></div>
 				<div id='alertError' class='alert alert-danger alertError'></div>
 				<br>
 			</div>

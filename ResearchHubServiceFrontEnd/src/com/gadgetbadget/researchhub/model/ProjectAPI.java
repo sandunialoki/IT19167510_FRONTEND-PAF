@@ -161,7 +161,7 @@ public class ProjectAPI extends HttpServlet {
 		response.getWriter().append(res.toString());
 	}
 
-	private JsonObject getTable(JsonObject productList) {
+	private JsonObject getTable(JsonObject projectList) {
 		//generating research projects table
 		JsonObject res;		
 		String tableString = "<table class='table table-sm table-striped'>"
