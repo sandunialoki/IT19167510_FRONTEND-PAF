@@ -37,9 +37,9 @@
 							<option value="RC21000009">NLP</option>
 							<option value="RC21000010">Cyber security</option>
 						</select>
-						<input type="text" id="project_start_date" name="project_start_date"
+						<input type="date" id="project_start_date" name="project_start_date"
 							placeholder="Project start date" class="form-control col-12 mb-2">
-						<input type="text" id="project_end_date" name="project_end_date"
+						<input type="date" id="project_end_date" name="project_end_date"
 							placeholder="Project End Date" class="form-control col-12 mb-2">	
 						<input type="text" id="expected_total_budget" name="expected_total_budget"
 							placeholder="Expected Total Budget" class="form-control col-12 mb-2">
