@@ -19,7 +19,7 @@
 		<div class="container py-5">
 			<div class="row pb-3">
 				<h3 class="col-12">Research Project Form</h3>
-				<form id="productsForm" class="form col-12">
+				<form id="projectsForm" class="form col-12">
 					<div class="row">
 						<input type="text" id="researcherId" name="researcherId"
 							placeholder="Researcher ID" class="form-control col-12 mb-2">
@@ -42,7 +42,9 @@
 						<input type="text" id="project_start_date" name="project_start_date"
 							placeholder="Project start date" class="form-control col-12 mb-2">
 						<input type="text" id="project_end_date" name="project_end_date"
-							placeholder="Project End Date" class="form-control col-12 mb-2">
+							placeholder="Project End Date" class="form-control col-12 mb-2">	
+						<input type="text" id="expected_total_budget" name="expected_total_budget"
+							placeholder="Expected Total Budget" class="form-control col-12 mb-2">
 						<input type="hidden" id="hiddenProjectId" name="hiddenProjectId" value="">
 						<button type="button" id="btnSubmit"
 							class="form-control btn btn-primary mb-2" value="" class="col-12">Add
